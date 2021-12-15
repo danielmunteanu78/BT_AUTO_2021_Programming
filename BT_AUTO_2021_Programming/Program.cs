@@ -4,11 +4,13 @@ namespace BT_AUTO_2021_Programming
 {
     class Program
     {
+       
         static void Main(string[] args)
         {
 
             //Course01(args);
-            Course02(args);
+            // Course02(args);
+            Course03(args);
 
             static void  Course01(string[] args)
             
@@ -259,6 +261,89 @@ namespace BT_AUTO_2021_Programming
                 r1.SetSize(2, 3);
                 r1.PrintRectangle();
             }
+
+            static void Course03(string [] args)
+                            
+            {
+                Random rnd = new Random();
+                GuessNumber(rnd.Next(0,1000));
+
+
+                static int TestValue(int TestValue, int target)
+                {
+                                       
+                    if (TestValue < target)
+                    {
+                        Console.WriteLine("Number to be guesed is higher");
+                        return  -1;
+                         }
+                    if(TestValue > target)
+                    {
+                        Console.WriteLine("Number to be guesed is lower");
+                        return  1;
+                    }
+                    Console.WriteLine("Bazinga !!! This is the number");
+                    return 0;
+                }
+
+                static void GuessNumber(int n)
+                {
+                    int currentNumber = 0;
+
+                    do
+                    {
+                        currentNumber = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Number chosen is {0}", currentNumber);
+                    }
+                    while (TestValue(currentNumber,n)!=0);
+                }
+
+                ComputeConversion(args);
+                //Console.WriteLine(ConcatenateStrings(args));
+                /*if(args.Length != 3)
+                {
+                    Console.WriteLine("The app receives only 3 parameters : amount, currency and exchange rate");
+                }
+                else
+                {
+                    Console.WriteLine("{0} {1} {2}", args[0], args[1], args[2]);
+                    CurrencyCalculator(Double.Parse(args[0]), args[1], Double.Parse(args[2]));
+                    double amount = double.Parse(args[0]);
+                   
+                }*/
+                static void ComputeConversion(string [] args)
+                {
+                    if (args.Length != 3)
+                    {
+                        Console.WriteLine("The app receives only 3 parameters : amount, currency and exchange rate");
+                    }
+                    else
+                    {
+                        Console.WriteLine("{0} {1} {2}", args[0], args[1], args[2]);
+                        CurrencyCalculator(Double.Parse(args[0]), args[1], Double.Parse(args[2]));
+                        double amount = double.Parse(args[0]);
+
+                    }
+                }
+
+                static string ConcatenateStrings(string[] args)
+                {
+                    string returnString = "";
+
+                    foreach (string s in args)
+                    {
+                        returnString += s;
+                    } // returnString = returnString + s;
+                        return returnString;                    
+                }
+
+                static void CurrencyCalculator(double amount, string currency, double convertionRate)
+                {
+                    Console.WriteLine("By converting {0} {1} into RON we obtain {2} RON ", amount, currency, amount * convertionRate);
+                }
+
+                
+            }            
         }
     }
 }
