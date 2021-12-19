@@ -9,7 +9,7 @@ namespace BT_AUTO_2021_Programming
         {
 
             //Course01(args);
-            // Course02(args);
+            //Course02(args);
             //Course03(args);
             Course04();
 
@@ -226,6 +226,7 @@ namespace BT_AUTO_2021_Programming
                     }
                 }
             }
+
             static void Course02(string[] args)
             {
                 Circle c1 = new Circle();
@@ -263,6 +264,7 @@ namespace BT_AUTO_2021_Programming
                 r1.SetSize(2, 3);
                 r1.PrintRectangle();
             }
+
             static void Course03(string[] args)
 
             {
@@ -276,24 +278,30 @@ namespace BT_AUTO_2021_Programming
 
             static void Course04()
             {
-                DrawFullShape(5, 3);
+                DrawFullShape(5,3);
                 Console.WriteLine();
-                DrawShapeOutline(22, 22);
+                DrawFullShape2(5,3);
                 Console.WriteLine();
-                DrawShapeCorners(10, 10);
+                DrawShapeOutline(6,4);
+                Console.WriteLine();
+                DrawShapeOutline2(6, 4);
+                Console.WriteLine();
+                DrawShapeCorners(6,4);
+                Console.WriteLine();
+                DrawShapeCorners2(6, 4);
 
                 Circle c1 = new Circle();
                 Circle c2 = new Circle(10);
                 //Circle c3 = new Circle("abc");
                 c1.PrintCircle(); //instantiate c1 with default (no params) constructor
-                c2.PrintCircle(); // instantiate c2 with constructor having 1 double param
+                c2.PrintCircle(); // instantiate c2 with constructor having one double parameter
 
                 Person p1 = new Person();
                 Person p2 = new Person("Alex",'m', new string[] { "Romanian" }, false, new DateTime());
                 p1.PrintPerson();
                 p2.PrintPerson();
 
-                Rectangle r1 = new Rectangle(10, 7);
+                Rectangle r1 = new Rectangle(2, 7);
                 r1.PrintRectangle();
 
                 Square s1 = new Square(6);
@@ -303,6 +311,11 @@ namespace BT_AUTO_2021_Programming
                 StructExample.MyStruct myStruct = new StructExample.MyStruct();
                 myStruct.Assign(10, "abc");
                 Console.WriteLine(myStruct.ComputeSum());
+
+                StructExample.Rectangle3d r2 = new StructExample.Rectangle3d();
+                r2.Assign(2,5,7);
+                Console.WriteLine(r2.GetArea());
+                Console.WriteLine(r2.GetVolume());
 
             }
 
@@ -351,6 +364,38 @@ namespace BT_AUTO_2021_Programming
                 }
             }
 
+            static void DrawShapeCorners2(int width, int height)
+            {
+                string s = ""; // *********
+                string s1 = "";// *       *
+
+                for (int i = 0; i < width; i++)
+                {
+                    s += " ";
+                    if (i == 0 || i == width - 1)
+                    {
+                        s1 += "*";
+                    }
+                    else
+                    {
+                        s1 += " ";
+                    }
+                }
+                for (int j = 0; j < height; j++)
+                {
+                    if (j == 0 || j == height - 1)
+                    {
+                        Console.WriteLine(s1);
+                    }
+                    else
+                    {
+                        Console.WriteLine(s);
+                    }
+
+                }
+
+            }
+
             static void DrawFullShape(int width, int height)
             {
                 for (int j = 0; j< height; j++)
@@ -363,7 +408,53 @@ namespace BT_AUTO_2021_Programming
                 }
             }
 
-            
+            static void DrawFullShape2(int width, int height)
+            {
+                string s = "";
+
+                for (int i = 0; i < width; i++)
+                {
+                    s += "*";
+                }
+                     for(int j = 0; j < height; j++)
+                {
+                    Console.WriteLine(s);
+                }
+                                   
+            }
+
+            static void DrawShapeOutline2(int width, int height)
+            {
+                string s = ""; // *********
+                string s1 = "";// *       *
+
+                for (int i = 0; i < width; i++)
+                {
+                    s += "*";
+                    if(i==0 || i == width - 1)
+                    {
+                        s1 += "*";
+                    }
+                    else
+                    {
+                        s1 += " ";
+                    }
+                }
+                for (int j = 0; j < height; j++)
+                {
+                    if(j==0 || j ==height-1)
+                    {
+                        Console.WriteLine(s);
+                    }
+                    else
+                    {
+                        Console.WriteLine(s1);
+                    }                       
+                   
+                }
+
+            }
+
             static bool IsOddNumber(int number)
             {
                 return number % 2 != 0;

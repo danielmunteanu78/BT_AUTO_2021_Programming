@@ -7,11 +7,12 @@ namespace BT_AUTO_2021_Programming
     public class StructExample
     {
         public struct MyStruct
+
         {
             int number;
             string testString;
 
-            public void Assign (int number,string testString)
+            public void Assign(int number, string testString)
             {
                 this.number = number;
                 this.testString = testString;
@@ -26,9 +27,8 @@ namespace BT_AUTO_2021_Programming
                 }
                 return sum;
             }
-
-        }
-
+        }          
+        
         public struct Rectangle3d
         {
             double l;
@@ -48,14 +48,13 @@ namespace BT_AUTO_2021_Programming
 
             public double GetArea()
             {
-
+                return 4*h*L + 2*l*L;
             }
 
             public double GetVolume()
             {
-
+                return l * L * h;
             }
         }
-
     }
 }
