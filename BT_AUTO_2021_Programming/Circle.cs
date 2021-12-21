@@ -4,10 +4,10 @@ using System.Text;
 
 namespace BT_AUTO_2021_Programming
 {
-    class Circle
+    class Circle : Shape
     {
         double radius;
-        const double PI = 3.1415;
+        //const double PI = 3.1415;
 
         public Circle(double radius) // constructor
         {
@@ -30,6 +30,15 @@ namespace BT_AUTO_2021_Programming
         public void PrintCircle()
         {
             Console.WriteLine("Cricle with radius {0} has area {1}", radius, GetArea());
+        }
+
+        public override void Draw()
+        {
+            Console.WriteLine("We are drawing a circle whith radius {0}", radius);
+        }
+        public override string ToString()
+        {
+            return "this is a circle with radius: " + radius;
         }
     }
 }

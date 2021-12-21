@@ -25,24 +25,20 @@ namespace BT_AUTO_2021_Programming
         {
 
         }
-
         public void Eat()
         {
             Console.WriteLine("The person is eating ... ");
             isHungry = false;
         }
-
         public void Run ()
         {
             Console.WriteLine("The person is ruuning for his health!");
             isHungry = true;
         }
-
-        public void SetName(string personName)
+        public void SetName(string name)
         {
-            name = personName;
+            this.name = name;
         }
-
         public void SetSex(char sex)
         {
             this.sex = sex;

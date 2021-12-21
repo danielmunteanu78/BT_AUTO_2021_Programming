@@ -11,8 +11,9 @@ namespace BT_AUTO_2021_Programming
             //Course01(args);
             //Course02(args);
             //Course03(args);
-            Course04();
-
+            //Course04();
+            Course05();
+        }
             static void Course01(string[] args)
 
             {
@@ -319,22 +320,59 @@ namespace BT_AUTO_2021_Programming
 
             }
 
-            static void DrawShapeOutline(int width, int height)
+            static void Course05()
+            {                
+            DrawShapeOutline(6,5);
+            Console.WriteLine();
+            DrawShapeOutline(6);
+            DrawShapeCorners(6,5);
+            Console.WriteLine();
+            DrawShapeCorners(6);
+            DrawFullShape(6,5);
+            Console.WriteLine();
+            DrawFullShape(6);
+
+                Circle c = new Circle(4);
+                Object o = new Object();
+                c.Draw();
+                Triangle t1 = new Triangle(5, 7, 9);
+                t1.Draw();
+                Square s1 = new Square(5);
+                Rectangle r1 = new Rectangle(2, 7);
+                Console.WriteLine(s1.GetArea());
+                Console.WriteLine(r1.GetArea());
+            Console.WriteLine();
+
+            Console.WriteLine(c.ToString());
+            Console.WriteLine(t1.ToString());
+            Console.WriteLine(r1.ToString());
+            Console.WriteLine(s1.ToString());
+            Console.WriteLine();
+
+
+            Teacher teacher1 = new Teacher("Programming","UPB", 2000, "Gigel Programatoru'",'m');
+            teacher1.PrintTeacher();
+            Console.WriteLine();
+            Student student1 = new Student("AN 1",true,true, "Andreea A",'f');
+            student1.PrintStudent();
+        }
+ 
+            public static void DrawShapeOutline(int width, int height)
             {
                 for (int j = 0; j < height; j++)
                 {
-                    for (int i = 0; i < width; i++) // this will print a single line with * counting width
+                    for (int i = 0; i < width; i++) /// this will print a single line with * counting width
                     {
-                        if (j==0 || j== height-1)
+                        if (j == 0 || j == height - 1)
                         {
                             Console.Write("*");
                         }
                         else
                         {
-                            if(i==0 || i == width - 1)
-                                {
+                            if (i == 0 || i == width - 1)
+                            {
                                 Console.Write("*");
-                                }
+                            }
                             else
                             {
                                 Console.Write(" ");
@@ -345,7 +383,44 @@ namespace BT_AUTO_2021_Programming
                 }
             }
 
-            static void DrawShapeCorners(int width, int height)
+            public static void DrawShapeOutline(int l)
+            {
+                DrawShapeOutline(l, l);
+            }
+
+             public static void DrawShapeOutline2(int width, int height)
+        {
+            string s = ""; // *********
+            string s1 = "";// *       *
+
+            for (int i = 0; i < width; i++)
+            {
+                s += "*";
+                if (i == 0 || i == width - 1)
+                {
+                    s1 += "*";
+                }
+                else
+                {
+                    s1 += " ";
+                }
+            }
+            for (int j = 0; j < height; j++)
+            {
+                if (j == 0 || j == height - 1)
+                {
+                    Console.WriteLine(s);
+                }
+                else
+                {
+                    Console.WriteLine(s1);
+                }
+
+            }
+
+        }
+
+            public static void DrawShapeCorners(int width, int height)
             {
                 for (int j = 0; j < height; j++)
                 {
@@ -364,7 +439,12 @@ namespace BT_AUTO_2021_Programming
                 }
             }
 
-            static void DrawShapeCorners2(int width, int height)
+            public static void DrawShapeCorners(int l)
+            {
+                DrawShapeCorners(l,l);
+            }
+
+            public static void DrawShapeCorners2(int width, int height)
             {
                 string s = ""; // *********
                 string s1 = "";// *       *
@@ -396,7 +476,7 @@ namespace BT_AUTO_2021_Programming
 
             }
 
-            static void DrawFullShape(int width, int height)
+            public static void DrawFullShape(int width, int height)
             {
                 for (int j = 0; j< height; j++)
                 {
@@ -408,7 +488,12 @@ namespace BT_AUTO_2021_Programming
                 }
             }
 
-            static void DrawFullShape2(int width, int height)
+            public static void DrawFullShape(int l)
+        {
+            DrawFullShape(l, l);
+        }
+
+            public static void DrawFullShape2(int width, int height)
             {
                 string s = "";
 
@@ -421,46 +506,14 @@ namespace BT_AUTO_2021_Programming
                     Console.WriteLine(s);
                 }
                                    
-            }
+            }            
 
-            static void DrawShapeOutline2(int width, int height)
-            {
-                string s = ""; // *********
-                string s1 = "";// *       *
-
-                for (int i = 0; i < width; i++)
-                {
-                    s += "*";
-                    if(i==0 || i == width - 1)
-                    {
-                        s1 += "*";
-                    }
-                    else
-                    {
-                        s1 += " ";
-                    }
-                }
-                for (int j = 0; j < height; j++)
-                {
-                    if(j==0 || j ==height-1)
-                    {
-                        Console.WriteLine(s);
-                    }
-                    else
-                    {
-                        Console.WriteLine(s1);
-                    }                       
-                   
-                }
-
-            }
-
-            static bool IsOddNumber(int number)
+            public static bool IsOddNumber(int number)
             {
                 return number % 2 != 0;
             }
 
-            static int TestValue(int TestValue, int target)
+            public static int TestValue(int TestValue, int target)
             {
 
                 if (TestValue < target)
@@ -477,7 +530,7 @@ namespace BT_AUTO_2021_Programming
                 return 0;
             }
 
-            static void GuessNumber(int n)
+            public static void GuessNumber(int n)
             {
                 int currentNumber = 0;
                 do
@@ -488,7 +541,7 @@ namespace BT_AUTO_2021_Programming
                 while (TestValue(currentNumber, n) != 0);
             }
 
-            static Shape GetShape(int x, int y, double a, char t, String s)
+              static Shape GetShape(int x, int y, double a, char t, String s)
              {
              Console.WriteLine(x);
              return new Shape();
@@ -503,8 +556,8 @@ namespace BT_AUTO_2021_Programming
                   returnString += s; // returnString = returnString + s;
                  }
                  return returnString;
-             }               
-                    
+             }             
+                  
 
               static void ComputeConversion(string[] args)
               {
@@ -526,4 +579,4 @@ namespace BT_AUTO_2021_Programming
             
         }
     }
-}
+
