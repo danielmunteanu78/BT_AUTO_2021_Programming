@@ -12,9 +12,13 @@ namespace BT_AUTO_2021_Programming
             //Course02(args);
             //Course03(args);
             //Course04();
-            Course05();
+            //Course05();
+            Course06();
         }
-            static void Course01(string[] args)
+
+       
+
+        static void Course01(string[] args)
 
             {
                 const int MAX_SIZE = 100;
@@ -356,8 +360,38 @@ namespace BT_AUTO_2021_Programming
             Student student1 = new Student("AN 1",true,true, "Andreea A",'f');
             student1.PrintStudent();
         }
- 
-            public static void DrawShapeOutline(int width, int height)
+
+        private static void Course06()
+        {
+            Car c1 = new Car(true, 20, 90);
+            Car c2 = new Car(false, 0, -90);
+            c1.Start();
+            c1.Accelerate();
+            c1.turnLeft();
+            c1.turnRight();
+
+            Console.WriteLine(Car.ConvertHpToKw(150));
+
+            Rectangle r1 = new Rectangle(3, 4);
+            r1.PrintRectangle();
+            r1.SetLenght(-10);
+            r1.PrintRectangle();
+
+            c2.Start();
+            c2.GearUp();
+            c2.Accelerate(20);
+            c2.Steer(20);
+            c2.Accelerate(10);
+            c2.turnLeft();
+            c2.GearUp();
+            c2.Accelerate();
+            c2.PrintCar();
+
+            c2.CarBrand = "Name";
+
+        }
+
+        public static void DrawShapeOutline(int width, int height)
             {
                 for (int j = 0; j < height; j++)
                 {
