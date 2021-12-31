@@ -363,12 +363,12 @@ namespace BT_AUTO_2021_Programming
 
         private static void Course06()
         {
-            Car c1 = new Car(true, 20, 90);
-            Car c2 = new Car(false, 0, -90);
+            Car c1 = new Car(true, 20, 90, 2, 3,ConsoleColor.Red);
+            Car c2 = new Car(false, 0, -90,2, 3, ConsoleColor.Black);
             c1.Start();
             c1.Accelerate();
             c1.turnLeft();
-            c1.turnRight();
+            c1.turnRight(); 
 
             Console.WriteLine(Car.ConvertHpToKw(150));
 

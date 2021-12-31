@@ -13,15 +13,22 @@ namespace BT_AUTO_2021_Programming
         float speed;
         ConsoleColor color;
         const byte MAX_GEAR = 6;
-        string carBrand;
+        string carBrand;  
 
         public string CarBrand { get => carBrand; set => carBrand = value; }
+
+        public Car(bool carStatus, float speed, double direction)
+        {
+            this.carStatus = carStatus;
+            this.speed = speed;
+            this.direction = direction;
+        }
 
         public Car()
         {
 
         }
-
+ 
         public Car(bool carStatus, double direction, float fuelLevel, byte gear, float speed, ConsoleColor color)
         {
             this.carStatus = carStatus;
@@ -74,7 +81,7 @@ namespace BT_AUTO_2021_Programming
         {
             if (gear == 0)
             {
-                Console.WriteLine("Already in gear 0 cannot decrease down");
+                Console.WriteLine("Already in gear 0 cannot decrease gear");
             }
             else
             {
@@ -96,12 +103,13 @@ namespace BT_AUTO_2021_Programming
 
         public void turnLeft()
         {
-            direction -= 90;
+            // direction -= 90;
+            Steer(-90);
         }
 
-        public void turnRight()
+        public void turnRight() 
         {
-            direction += 90;
+            Steer(90);
         }
 
         public static double ConvertHpToKw(double hp)
@@ -112,9 +120,10 @@ namespace BT_AUTO_2021_Programming
         public void PrintCar()
         {
             Console.WriteLine("Current status of the car is: ");
-            Console.WriteLine("Gear level {0} ",gear);
-            Console.WriteLine("Direction angle {0} ", direction);
-            //Console.WriteLine("Gear level {0} ", gear);
+            Console.WriteLine("GearLevel: {0}",gear);
+            Console.WriteLine("Direction angle: {0}", direction);
+            Console.WriteLine("Car status: {0}", carStatus);
+            Console.WriteLine("Car speed: {0}", speed);
 
         }
     }

@@ -17,7 +17,7 @@ namespace BT_AUTO_2021_Programming
 
         public Rectangle()
         {
-
+            this.Test(); 
         }
 
         public double GetLenght()
@@ -33,7 +33,7 @@ namespace BT_AUTO_2021_Programming
             }
             else
             {
-                Console.WriteLine("You can't set a lenght a negative number");
+                Console.WriteLine("You can't set a length to a negative number !!!");
             }
         }
 
