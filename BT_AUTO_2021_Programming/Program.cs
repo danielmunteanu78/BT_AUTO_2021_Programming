@@ -13,7 +13,8 @@ namespace BT_AUTO_2021_Programming
             //Course03(args);
             //Course04();
             //Course05();
-            Course06();
+            //Course06();
+            Light();
         }
 
        
@@ -388,6 +389,18 @@ namespace BT_AUTO_2021_Programming
             c2.PrintCar();
 
             c2.CarBrand = "Name";
+
+        }
+
+        static void Light()
+        {
+            Light l1 = new Light(true, 3);
+            l1.Brighten();
+            l1.Brighten();
+            l1.Dim();
+            l1.TurnOff();
+            l1.TurnOn();
+            l1.Status();
 
         }
 
