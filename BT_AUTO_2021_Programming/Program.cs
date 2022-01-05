@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace BT_AUTO_2021_Programming
 {
@@ -14,7 +15,8 @@ namespace BT_AUTO_2021_Programming
             //Course04();
             //Course05();
             //Course06();
-            Light();
+            //Light();
+            Course07();
         }
 
        
@@ -402,6 +404,67 @@ namespace BT_AUTO_2021_Programming
             l1.TurnOn();
             l1.Status();
 
+        }
+
+        private static void Course07()
+        {
+            Square s1 = new Square();
+            Rectangle r1 = new Rectangle();
+            Shape sh1 = new Shape();
+
+            //polymorphism
+
+            IShape s2 = new Square();
+            IShape r2 = new Rectangle();
+            IShape sh2 = new Shape();
+
+            List<string> lista  = new List<string>();
+            List<Shape> shapeList = new List<Shape>();
+
+            shapeList.Add((Shape)s2); // de revizuit
+            shapeList.Add((Shape)r2);
+            shapeList.Add((Shape)sh2);
+            shapeList.Add(s1);
+
+            s1.Draw();
+            s2.Draw();
+            s2.State();
+
+            s1.PrintSquare();
+            ((Square)s2).PrintSquare();
+
+            // example of using polymorphism
+            Shape sh3;
+            string type = "rectangle";
+
+            switch(type)
+            {
+                case "square":
+                    {
+                        sh3 = new Square();
+                        break;
+                    }
+                case "rectangle":
+                    {
+                        sh3 = new Rectangle();
+                        break;
+                    }
+                default:
+                    {
+                        sh3 = new Shape();
+                        break;
+                    }                    
+            }
+            sh3.Draw();
+
+            IIntf ob1 = new MyParticularShape();
+            IIntf ob2 = new MyParticularShape();
+            ob1.Print();
+            ob2.Print();
+
+            PartialClass pc = new PartialClass();
+            pc.Method1();
+            pc.Method2();
         }
 
         public static void DrawShapeOutline(int width, int height)
