@@ -419,11 +419,11 @@ namespace BT_AUTO_2021_Programming
             IShape sh2 = new Shape();
 
             List<string> lista  = new List<string>();
-            List<Shape> shapeList = new List<Shape>();
+            List<IShape> shapeList = new List<IShape>();
 
-            shapeList.Add((Shape)s2); // de revizuit
-            shapeList.Add((Shape)r2);
-            shapeList.Add((Shape)sh2);
+            shapeList.Add(s2);
+            shapeList.Add(r2);
+            shapeList.Add(sh2);
             shapeList.Add(s1);
 
             s1.Draw();

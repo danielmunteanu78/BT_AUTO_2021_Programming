@@ -37,16 +37,6 @@ namespace BT_AUTO_2021_Programming
         public override void Color()
         {
             Console.WriteLine("Drawing a shape !");
-        }
-
-        public override void Draw()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Color()
-        {
-            throw new NotImplementedException();
-        }
+        }        
     }
 }
