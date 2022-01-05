@@ -34,6 +34,11 @@ namespace BT_AUTO_2021_Programming
         {
             return "This is a square with side: " + side;
         }
-        
+
+        public override void Draw()
+        {
+            Console.WriteLine("Drawing a sqaure !");
+        }
+
     }
 }
