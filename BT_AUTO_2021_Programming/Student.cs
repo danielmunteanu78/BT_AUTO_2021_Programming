@@ -15,8 +15,7 @@ namespace BT_AUTO_2021_Programming
         {
             this.currentStudyYear = currentStudyYear;
             this.hasScholarship = hasScholarship;
-            this.hasDormRoom = hasDormRoom;
-           // this.courses = courses;
+            this.hasDormRoom = hasDormRoom;            
             this.SetName(name);
             this.SetSex(sex);
         }

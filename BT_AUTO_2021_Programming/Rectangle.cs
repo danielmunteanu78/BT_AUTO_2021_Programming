@@ -66,7 +66,7 @@ namespace BT_AUTO_2021_Programming
 
         public override string ToString()
         {
-            return "This is a rectangle with " + width + " width and " + lenght + " lenght";
+            return "This is a rectangle with " + width + " width and " + lenght + " lenght !";
         }
     }
 }

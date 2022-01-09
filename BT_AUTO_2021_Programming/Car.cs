@@ -43,12 +43,10 @@ namespace BT_AUTO_2021_Programming
         {
             speed += 5;
         }
-
         public void Accelerate(float speedDelta)
         {
             speed += speedDelta; 
         }
-
         public void Decelerate (float speedDelta)
         {
             if(speed - speedDelta < 0)
@@ -93,30 +91,25 @@ namespace BT_AUTO_2021_Programming
         {
             carStatus = true;
         }
-
         public void Stop()
         {
             carStatus = false;
             speed = 0;
             gear = 1;
         }
-
         public void turnLeft()
         {
             // direction -= 90;
             Steer(-90);
         }
-
         public void turnRight() 
         {
             Steer(90);
         }
-
         public static double ConvertHpToKw(double hp)
         {
             return hp * 0.735499;
         }
-
         public void PrintCar()
         {
             Console.WriteLine("Current status of the car is: ");

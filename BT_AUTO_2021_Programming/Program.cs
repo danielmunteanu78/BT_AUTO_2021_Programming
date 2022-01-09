@@ -13,7 +13,7 @@ namespace BT_AUTO_2021_Programming
             //Course03(args);
             //Course04();
             //Course05();
-            Course06();
+            Course06();                        
         }
 
        
@@ -338,7 +338,7 @@ namespace BT_AUTO_2021_Programming
 
                 Circle c = new Circle(4);
                 Object o = new Object();
-                c.Draw();
+                c.Draw();            
                 Triangle t1 = new Triangle(5, 7, 9);
                 t1.Draw();
                 Square s1 = new Square(5);
@@ -360,11 +360,12 @@ namespace BT_AUTO_2021_Programming
             Student student1 = new Student("AN 1",true,true, "Andreea A",'f');
             student1.PrintStudent();
         }
+        
 
         private static void Course06()
         {
             Car c1 = new Car(true, 20, 90, 2, 3,ConsoleColor.Red);
-            Car c2 = new Car(false, 0, -90,2, 3, ConsoleColor.Black);
+            Car c2 = new Car(false, 0,-90, 2, 3, ConsoleColor.Black);
             c1.Start();
             c1.Accelerate();
             c1.turnLeft();
@@ -372,7 +373,7 @@ namespace BT_AUTO_2021_Programming
 
             Console.WriteLine(Car.ConvertHpToKw(150));
 
-            Rectangle r1 = new Rectangle(3, 4);
+            /*Rectangle r1 = new Rectangle(3, 4);
             r1.PrintRectangle();
             r1.SetLenght(-10);
             r1.PrintRectangle();
@@ -387,9 +388,9 @@ namespace BT_AUTO_2021_Programming
             c2.Accelerate();
             c2.PrintCar();
 
-            c2.CarBrand = "Name";
+            c2.CarBrand = "Name";*/
 
-        }
+        }       
 
         public static void DrawShapeOutline(int width, int height)
             {
