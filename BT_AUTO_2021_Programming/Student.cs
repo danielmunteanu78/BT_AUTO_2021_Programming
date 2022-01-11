@@ -11,9 +11,11 @@ namespace BT_AUTO_2021_Programming
         bool hasDormRoom;
         string[] courses;
 
+        public string CurrentStudyYear { get => currentStudyYear; set => currentStudyYear = value; }
+
         public Student(string currentStudyYear, bool hasScholarship, bool hasDormRoom, string name, char sex)
         {
-            this.currentStudyYear = currentStudyYear;
+            this.CurrentStudyYear = currentStudyYear;
             this.hasScholarship = hasScholarship;
             this.hasDormRoom = hasDormRoom;            
             this.SetName(name);
@@ -27,7 +29,7 @@ namespace BT_AUTO_2021_Programming
         public void PrintStudent()
         {
             base.PrintPerson();
-            Console.WriteLine("Current study year is {0}", currentStudyYear);
+            Console.WriteLine("Current study year is {0}", CurrentStudyYear);
             Console.WriteLine("Dormroom status : {0}", hasDormRoom);
             Console.WriteLine("Scholarship status: {0}", hasScholarship);
         }       
