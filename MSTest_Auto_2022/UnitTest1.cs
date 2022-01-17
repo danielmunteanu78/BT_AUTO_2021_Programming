@@ -14,11 +14,16 @@ namespace MSTest_Auto_2022
         }
 
         [TestMethod]
-        public void TestMethod1()
+        [DataRow(100,200,'+',300)]
+        [DataRow(100, -200, '+', -100)]
+        [DataRow(-100, -200, '+', -300)]
+        [DataRow(100, 0, '+', 100)]
+
+        public void TestMethod1(double a,  double b, char op, double res)
         {
             Console.WriteLine("Testing ...");
-            Calculator c = new Calculator(100, 200, '+');
-            Assert.AreEqual(300, c.Compute());
+            Calculator c = new Calculator(a,b,op);
+            Assert.AreEqual(res, c.Compute());
         }
 
         [TestCleanup]

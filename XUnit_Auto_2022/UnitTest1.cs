@@ -23,12 +23,16 @@ namespace XUnit_Auto_2022
         {
             testOutputHelper.WriteLine("TearDown!!");
         }
-        [Fact]
-        public void Test1()
+        // Fact is for tests without parameters. Theory is for tests with parameters (test data)
+
+        [Theory]
+        [InlineData(50,100,'-',-50)]
+        [InlineData(50, -100, '-', 150)]
+        public void Test1(double a, double b, char op, double res)
         {
             testOutputHelper.WriteLine("My test");
-            Calculator c = new Calculator(50, 100, '-');
-            Assert.Equal(-50, c.Compute());
+            Calculator c = new Calculator(a,b,op);
+            Assert.Equal(res, c.Compute());
 
         }
     }
