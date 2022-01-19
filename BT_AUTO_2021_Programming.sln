@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSTest_Auto_2022", "MSTest_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnit_Auto_2022", "XUnit_Auto_2022\XUnit_Auto_2022.csproj", "{5F24E26E-8743-4BE0-AB9D-7E2801638DA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homeworks", "..\Homeworks\Homeworks.csproj", "{B468A64A-2209-485B-B53E-7ACA86F720CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homeworks", "..\Homeworks\Homeworks.csproj", "{B468A64A-2209-485B-B53E-7ACA86F720CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
