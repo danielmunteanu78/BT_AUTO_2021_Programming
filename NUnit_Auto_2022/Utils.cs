@@ -10,18 +10,19 @@ namespace NUnit_Auto_2022
     {
         public static IWebElement WaitForElement(IWebDriver driver, int seconds, By locator)
         {
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
             return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(locator));
         }
-        public static IWebElement WaitForFluentElement(IWebDriver driver, int seconds, By locator)
+       public static IWebElement WaitForFluentElement(IWebDriver driver, int seconds, By locator)
         {
-            DefaultWait<IWebDriver> fluentWait = new DefaultWait<IWebDriver>(driver);           
-            fluentWait.Timeout = TimeSpan.FromSeconds(seconds);
-            fluentWait.PollingInterval = TimeSpan.FromMilliseconds(250);
-            fluentWait.Message = "Sorry ! The element in the page cannot be found !";
+            DefaultWait<IWebDriver> fluentWait = new DefaultWait<IWebDriver>(driver)
+            {
+                Timeout = TimeSpan.FromSeconds(seconds),
+                PollingInterval = TimeSpan.FromMilliseconds(250),
+                Message = "Sorry ! The element in the page cannot be found !"
+            };
             fluentWait.IgnoreExceptionTypes(typeof(NoSuchElementException));
-            var element = fluentWait.Until(x => x.FindElement(locator));
-            return element.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(locator));
-        }    
+            return fluentWait.Until(x => x.FindElement(locator));            
+        }   
     }
 }
