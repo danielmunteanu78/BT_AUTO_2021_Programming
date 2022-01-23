@@ -1,6 +1,8 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -25,7 +27,42 @@ namespace NUnit_Auto_2022
 
         public void Setup()
         {
-            driver = new ChromeDriver();
+            // chrome options
+            var options = new ChromeOptions();
+
+            //options.AddArgument("--start-maximized");
+            //options.AddArgument("headless");
+            options.AddArgument("ignore-certificate-errors");
+
+            var proxy = new Proxy();
+            proxy.HttpProxy = "127.0.0.1:8080";
+            proxy.IsAutoDetect = false;
+            //options.Proxy = proxy;
+            //options.AddExtension("");
+
+            // Firefox options
+            var firefoxOptions = new FirefoxOptions();
+            string[] optionList =
+            {
+                "--ignore-certificate-errors",
+                "--no-sand-box",
+                "--disable-gpu"
+            };
+
+            firefoxOptions.AddArguments(optionList);
+            FirefoxProfile fProfile = new FirefoxProfile();
+            fProfile.AddExtension("");
+            firefoxOptions.Profile = fProfile;
+
+            // Edge options
+            var edgeOptions = new EdgeOptions();
+            //edgeOptions.AddExtension("");
+            edgeOptions.AddArguments("args", "['--start-maximized','--headless']");
+            edgeOptions.AddArgument("headless");
+
+             driver = new ChromeDriver(options);
+            //driver = new FirefoxDriver(firefoxOptions);
+            //driver.Manage().Window.Maximize();
         }
 
         [TestCase("dinosaur", "dinosaurpassword","","")]
@@ -115,6 +152,33 @@ namespace NUnit_Auto_2022
 
             var element = Utils.WaitForFluentElement(driver, 20, By.Id("btn2"));
             element.Click();
+        }
+
+        [Test]
+
+        public void Test06()
+        {
+            driver.Navigate().GoToUrl("https://magazinulcolectionarului.ro/");
+            var cookies = driver.Manage().Cookies;
+            Console.WriteLine("The site containes {0} cookies", cookies.AllCookies.Count);
+            Utils.PrintCookies(cookies);
+            Cookie myCookie = new Cookie("myCookie", "vieooaoaonaafeec");
+            cookies.AddCookie(myCookie);
+            Utils.PrintCookies(cookies);
+
+            var ss = ((ITakesScreenshot)driver).GetScreenshot();
+            ss.SaveAsFile("C://Temp//screenshot.png",ScreenshotImageFormat.Png);
+            Utils.TakeScreenShotWithDate(driver, "C:\\Temp", "screenshot", ScreenshotImageFormat.Png);
+        }
+
+        [Test]
+
+        public void Test07()
+        {
+            driver.Navigate().GoToUrl("http://86.121.249.150:4999/#/alert");
+            var alertButton = driver.FindElement(By.Id("alert=trigger"));
+            var confirmButton = driver.FindElement(By.Id("confirm-trigger"));
+            var promptButton = driver.FindElement(By.Id("prompt-trigger"));
         }
 
         [TearDown]
